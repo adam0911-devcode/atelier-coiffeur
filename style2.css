@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --dark: #111111;
+    --white: #ffffff;
+    --border: #e1e1e1;
+    --grey-bg: #f9f9f9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+/* --- NAVIGATION --- */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/* --- STRUCTURE DE PAGE STANDARDISEE --- */
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+}
+
+/* --- NOUVEAU DESIGN FORMULAIRE (MODE PRO) --- */
+.reservation-wrapper {
+    max-width: 800px; /* On limite la largeur globale */
+    margin: auto;
+    background: var(--white);
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.03); /* Petite ombre discrète pour le relief */
+}
+
+/* Grille pour les champs simples */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 champs par ligne */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style commun pour TOUS les champs */
+input, select, textarea {
+    width: 100%; /* Ils prennent toute la place de leur case */
+    padding: 18px;
+    border: 1px solid var(--border); /* Bordure discrète */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--gold); /* Bordure dorée quand on clique */
+    outline: none;
+}
+
+/* Le textarea prend toute la largeur */
+textarea {
+    grid-column: 1 / -1; 
+    margin-bottom: 30px;
+}
+
+/* NOUVEAU BOUTON PRO (RE-DESSINÉ) */
+.btn-gold-form {
+    display: block; /* Il devient un bloc */
+    width: 100%; /* Il remplit sa boîte d'inscription */
+    max-width: 300px; /* Mais sa largeur est limitée pour rester pro */
+    margin: 20px auto 0 auto; /* Centré dans la boîte */
+    padding: 18px;
+    background-color: var(--gold);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.btn-gold-form:hover {
+    background-color: var(--dark);
+    transform: translateY(-3px);
+}
+
+/* SECTION INFOS PRATIQUES ÉPURÉE */
+.info-section {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 60px;
+    background: var(--grey-bg);
+    margin-top: 80px;
+    text-align: center;
+}
+
+.info-block h3 { font-family: 'Playfair Display'; margin-bottom: 15px; color: var(--gold); }
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 60px; background: var(--dark); color: white; }
