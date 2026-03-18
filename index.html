@@ -1,42 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>L'Atelier Coiffure | Toulouse</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier Coiffure | Élégance & Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #111111;
+            --white: #ffffff;
+            --bg-light: #f9f9f9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; } /* Pour un défilement doux */
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--white); 
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 5px; }
+        .nav-links { display: flex; justify-content: center; gap: 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { text-decoration: none; color: var(--dark); transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('salon.png') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center; padding: 20px;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .btn-gold { 
+            background: var(--gold); color: white; padding: 15px 35px; 
+            text-decoration: none; font-weight: 600; border-radius: 2px; transition: 0.3s;
+        }
+
+        /* --- SECTIONS COMMUNES --- */
+        section { padding: 80px 20px; text-align: center; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 40px; position: relative; }
+        h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto; }
+
+        /* --- PRESTATIONS --- */
+        .services-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-item { background: var(--bg-light); padding: 30px; border-radius: 5px; }
+        .price { color: var(--gold); font-weight: 600; font-size: 1.2rem; display: block; margin-top: 10px; }
+
+        /* --- GALERIE --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; max-width: 1200px; margin: 0 auto; }
+        .gallery-grid img { width: 100%; height: 250px; object-fit: cover; }
+
+        /* --- CONTACT / RDV --- */
+        .contact { background: var(--dark); color: white; }
+        .btn-phone { background: var(--gold); color: white; padding: 20px 40px; display: inline-block; margin-top: 20px; text-decoration: none; font-size: 1.1rem; }
+
+        /* --- MOBILE OPTIMISATION --- */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { gap: 10px; }
+            section { padding: 60px 15px; }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">L'ATELIER</div>
+        <div class="logo">L'Atelier</div>
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="prestations.html">Prestations</a>
-            <a href="galerie.html">Galerie</a>
-            <a href="contact.html">Rendez-vous</a>
+            <a href="#accueil">Accueil</a>
+            <a href="#prestations">Tarifs</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">RDV</a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>L'élégance<br>à l'état pur.</h1>
-            <p>Découvrez l'expertise de nos maîtres coiffeurs dans un cadre prestigieux.</p>
-            <a href="prestations.html" class="btn-gold">Voir nos préstations</a>
-        </div>
-        <div class="hero-img"></div>
+    <section id="accueil" class="hero">
+        <h1>L'élégance à l'état pur.</h1>
+        <p style="margin-bottom: 30px;">L'expertise de nos maîtres coiffeurs dans un cadre prestigieux.</p>
+        <a href="#prestations" class="btn-gold">Découvrir nos services</a>
     </section>
 
-    <section class="promo-banner">
-    <div class="promo-img"></div>
-    
-    <div class="promo-info">
-        <h2>Un Diagnostic Personnalisé</h2>
-        <p>Chaque visage est unique. Nous prenons le temps d'analyser vos traits et la nature de vos cheveux pour une coupe qui vous sublime vraiment.</p>
-        <p><i>"La coiffure est la dernière finition de la femme." - Coco Chanel</i></p>
-    </div>
-</section>
+    <section id="prestations">
+        <h2>Nos Prestations</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Coupe Signature</h3>
+                <p>Shampoing, massage, coupe et coiffage.</p>
+                <span class="price">45€</span>
+            </div>
+            <div class="service-item">
+                <h3>Coloration Éclat</h3>
+                <p>Teinture haute brillance sans ammoniaque.</p>
+                <span class="price">75€</span>
+            </div>
+            <div class="service-item">
+                <h3>Rituel Barbier</h3>
+                <p>Taille de barbe et soin serviette chaude.</p>
+                <span class="price">35€</span>
+            </div>
+        </div>
+    </section>
 
-    <footer><p>© 2026 L'Atelier Coiffure | Toulouse</p></footer>
+    <section id="galerie" style="background: var(--bg-light);">
+        <h2>Galerie</h2>
+        <div class="gallery-grid">
+            <img src="photo1.png" alt="Coupe 1">
+            <img src="photo2.png" alt="Coupe 2">
+            <img src="photo3.png" alt="Coupe 3">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Prendre rendez-vous</h2>
+        <p>Pour un service optimal, nous gérons les réservations par téléphone uniquement.</p>
+        <a href="tel:0102030405" class="btn-phone">Appeler le 01 02 03 04 05</a>
+        <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">© 2026 L'Atelier Coiffure - Ouvert du Mardi au Samedi</p>
+    </section>
+
 </body>
 </html>
