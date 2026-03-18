@@ -72,8 +72,17 @@
         /* --- MOBILE OPTIMISATION --- */
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.2rem; }
-            .nav-links { gap: 10px; }
+            .nav-links { gap: 10px; font-size: 0.65rem; }
             section { padding: 60px 15px; }
+
+            /* --- CETTE PARTIE CHANGE --- */
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Une seule colonne */
+                gap: 20px; /* Plus d'espace entre les photos */
+            }
+            .gallery-grid img {
+                height: 300px; /* On peut les faire un peu plus hautes */
+            }
         }
     </style>
 </head>
